@@ -1,0 +1,84 @@
+|mux2to1_8bit
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+x[2] => x[2].IN1
+x[3] => x[3].IN1
+x[4] => x[4].IN1
+x[5] => x[5].IN1
+x[6] => x[6].IN1
+x[7] => x[7].IN1
+y[0] => y[0].IN1
+y[1] => y[1].IN1
+y[2] => y[2].IN1
+y[3] => y[3].IN1
+y[4] => y[4].IN1
+y[5] => y[5].IN1
+y[6] => y[6].IN1
+y[7] => y[7].IN1
+select => select.IN8
+m[0] <= mux2to1_1bit:uut0.m
+m[1] <= mux2to1_1bit:uut1.m
+m[2] <= mux2to1_1bit:uut2.m
+m[3] <= mux2to1_1bit:uut3.m
+m[4] <= mux2to1_1bit:uut4.m
+m[5] <= mux2to1_1bit:uut5.m
+m[6] <= mux2to1_1bit:uut6.m
+m[7] <= mux2to1_1bit:uut7.m
+
+
+|mux2to1_8bit|mux2to1_1bit:uut0
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_8bit|mux2to1_1bit:uut1
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_8bit|mux2to1_1bit:uut2
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_8bit|mux2to1_1bit:uut3
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_8bit|mux2to1_1bit:uut4
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_8bit|mux2to1_1bit:uut5
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_8bit|mux2to1_1bit:uut6
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_8bit|mux2to1_1bit:uut7
+x => m.DATAB
+y => m.DATAA
+select => m.OUTPUTSELECT
+m <= m.DB_MAX_OUTPUT_PORT_TYPE
+
+

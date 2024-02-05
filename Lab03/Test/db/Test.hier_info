@@ -1,0 +1,30 @@
+|Test
+clk_50 => clk_1Hz~reg0.CLK
+clk_50 => count[0].CLK
+clk_50 => count[1].CLK
+clk_50 => count[2].CLK
+clk_50 => count[3].CLK
+clk_50 => count[4].CLK
+clk_50 => count[5].CLK
+clk_50 => count[6].CLK
+clk_50 => count[7].CLK
+clk_50 => count[8].CLK
+clk_50 => count[9].CLK
+clk_50 => count[10].CLK
+clk_50 => count[11].CLK
+clk_50 => count[12].CLK
+clk_50 => count[13].CLK
+clk_50 => count[14].CLK
+clk_50 => count[15].CLK
+clk_50 => count[16].CLK
+clk_50 => count[17].CLK
+clk_50 => count[18].CLK
+clk_50 => count[19].CLK
+clk_50 => count[20].CLK
+clk_50 => count[21].CLK
+clk_50 => count[22].CLK
+clk_50 => count[23].CLK
+clk_50 => count[24].CLK
+clk_1Hz <= clk_1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

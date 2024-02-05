@@ -1,0 +1,327 @@
+Simulator report for Test
+Thu Nov 09 11:11:13 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 110 nodes    ;
+; Simulation Coverage         ;      47.71 % ;
+; Total Number of Transitions ; 72268        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                 ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                       ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                        ;               ;
+; Vector input source                                                                        ; D:/Homework/CE213/Lab/Lab03/Test/output_files/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                         ; On            ;
+; Check outputs                                                                              ; Off                                                        ; Off           ;
+; Report simulation coverage                                                                 ; On                                                         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                         ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                         ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                         ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                        ; Off           ;
+; Detect glitches                                                                            ; Off                                                        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                        ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                 ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      47.71 % ;
+; Total nodes checked                                 ; 110          ;
+; Total output ports checked                          ; 109          ;
+; Total output ports with complete 1/0-value coverage ; 52           ;
+; Total output ports with no 1/0-value coverage       ; 56           ;
+; Total output ports with no 1-value coverage         ; 56           ;
+; Total output ports with no 0-value coverage         ; 57           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------------+
+; Complete 1/0-Value Coverage                           ;
++-----------------+------------------+------------------+
+; Node Name       ; Output Port Name ; Output Port Type ;
++-----------------+------------------+------------------+
+; |Test|count~13  ; |Test|count~13   ; out              ;
+; |Test|count~14  ; |Test|count~14   ; out              ;
+; |Test|count~15  ; |Test|count~15   ; out              ;
+; |Test|count~16  ; |Test|count~16   ; out              ;
+; |Test|count~17  ; |Test|count~17   ; out              ;
+; |Test|count~18  ; |Test|count~18   ; out              ;
+; |Test|count~19  ; |Test|count~19   ; out              ;
+; |Test|count~20  ; |Test|count~20   ; out              ;
+; |Test|count~21  ; |Test|count~21   ; out              ;
+; |Test|count~22  ; |Test|count~22   ; out              ;
+; |Test|count~23  ; |Test|count~23   ; out              ;
+; |Test|count~24  ; |Test|count~24   ; out              ;
+; |Test|count~25  ; |Test|count~25   ; out              ;
+; |Test|count~26  ; |Test|count~26   ; out              ;
+; |Test|count[11] ; |Test|count[11]  ; regout           ;
+; |Test|count[10] ; |Test|count[10]  ; regout           ;
+; |Test|count[9]  ; |Test|count[9]   ; regout           ;
+; |Test|count[8]  ; |Test|count[8]   ; regout           ;
+; |Test|count[7]  ; |Test|count[7]   ; regout           ;
+; |Test|count[6]  ; |Test|count[6]   ; regout           ;
+; |Test|count[5]  ; |Test|count[5]   ; regout           ;
+; |Test|count[4]  ; |Test|count[4]   ; regout           ;
+; |Test|count[3]  ; |Test|count[3]   ; regout           ;
+; |Test|count[2]  ; |Test|count[2]   ; regout           ;
+; |Test|count[1]  ; |Test|count[1]   ; regout           ;
+; |Test|count[0]  ; |Test|count[0]   ; regout           ;
+; |Test|clk       ; |Test|clk        ; out              ;
+; |Test|Add0~0    ; |Test|Add0~0     ; out0             ;
+; |Test|Add0~1    ; |Test|Add0~1     ; out0             ;
+; |Test|Add0~2    ; |Test|Add0~2     ; out0             ;
+; |Test|Add0~3    ; |Test|Add0~3     ; out0             ;
+; |Test|Add0~4    ; |Test|Add0~4     ; out0             ;
+; |Test|Add0~5    ; |Test|Add0~5     ; out0             ;
+; |Test|Add0~6    ; |Test|Add0~6     ; out0             ;
+; |Test|Add0~7    ; |Test|Add0~7     ; out0             ;
+; |Test|Add0~8    ; |Test|Add0~8     ; out0             ;
+; |Test|Add0~9    ; |Test|Add0~9     ; out0             ;
+; |Test|Add0~10   ; |Test|Add0~10    ; out0             ;
+; |Test|Add0~11   ; |Test|Add0~11    ; out0             ;
+; |Test|Add0~12   ; |Test|Add0~12    ; out0             ;
+; |Test|Add0~13   ; |Test|Add0~13    ; out0             ;
+; |Test|Add0~14   ; |Test|Add0~14    ; out0             ;
+; |Test|Add0~15   ; |Test|Add0~15    ; out0             ;
+; |Test|Add0~16   ; |Test|Add0~16    ; out0             ;
+; |Test|Add0~17   ; |Test|Add0~17    ; out0             ;
+; |Test|Add0~18   ; |Test|Add0~18    ; out0             ;
+; |Test|Add0~19   ; |Test|Add0~19    ; out0             ;
+; |Test|Add0~20   ; |Test|Add0~20    ; out0             ;
+; |Test|Add0~21   ; |Test|Add0~21    ; out0             ;
+; |Test|Add0~22   ; |Test|Add0~22    ; out0             ;
+; |Test|Add0~23   ; |Test|Add0~23    ; out0             ;
+; |Test|Add0~24   ; |Test|Add0~24    ; out0             ;
++-----------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++-------------------------------------------------------+
+; Missing 1-Value Coverage                              ;
++-----------------+------------------+------------------+
+; Node Name       ; Output Port Name ; Output Port Type ;
++-----------------+------------------+------------------+
+; |Test|count~0   ; |Test|count~0    ; out              ;
+; |Test|count~1   ; |Test|count~1    ; out              ;
+; |Test|count~2   ; |Test|count~2    ; out              ;
+; |Test|count~3   ; |Test|count~3    ; out              ;
+; |Test|count~4   ; |Test|count~4    ; out              ;
+; |Test|count~5   ; |Test|count~5    ; out              ;
+; |Test|count~6   ; |Test|count~6    ; out              ;
+; |Test|count~7   ; |Test|count~7    ; out              ;
+; |Test|count~8   ; |Test|count~8    ; out              ;
+; |Test|count~9   ; |Test|count~9    ; out              ;
+; |Test|count~10  ; |Test|count~10   ; out              ;
+; |Test|count~11  ; |Test|count~11   ; out              ;
+; |Test|count~12  ; |Test|count~12   ; out              ;
+; |Test|count[26] ; |Test|count[26]  ; regout           ;
+; |Test|count[25] ; |Test|count[25]  ; regout           ;
+; |Test|count[24] ; |Test|count[24]  ; regout           ;
+; |Test|count[23] ; |Test|count[23]  ; regout           ;
+; |Test|count[22] ; |Test|count[22]  ; regout           ;
+; |Test|count[21] ; |Test|count[21]  ; regout           ;
+; |Test|count[20] ; |Test|count[20]  ; regout           ;
+; |Test|count[19] ; |Test|count[19]  ; regout           ;
+; |Test|count[18] ; |Test|count[18]  ; regout           ;
+; |Test|count[17] ; |Test|count[17]  ; regout           ;
+; |Test|count[16] ; |Test|count[16]  ; regout           ;
+; |Test|count[15] ; |Test|count[15]  ; regout           ;
+; |Test|count[14] ; |Test|count[14]  ; regout           ;
+; |Test|count[13] ; |Test|count[13]  ; regout           ;
+; |Test|seconds   ; |Test|seconds    ; pin_out          ;
+; |Test|reset     ; |Test|reset      ; out              ;
+; |Test|Add0~25   ; |Test|Add0~25    ; out0             ;
+; |Test|Add0~26   ; |Test|Add0~26    ; out0             ;
+; |Test|Add0~27   ; |Test|Add0~27    ; out0             ;
+; |Test|Add0~28   ; |Test|Add0~28    ; out0             ;
+; |Test|Add0~29   ; |Test|Add0~29    ; out0             ;
+; |Test|Add0~30   ; |Test|Add0~30    ; out0             ;
+; |Test|Add0~31   ; |Test|Add0~31    ; out0             ;
+; |Test|Add0~32   ; |Test|Add0~32    ; out0             ;
+; |Test|Add0~33   ; |Test|Add0~33    ; out0             ;
+; |Test|Add0~34   ; |Test|Add0~34    ; out0             ;
+; |Test|Add0~35   ; |Test|Add0~35    ; out0             ;
+; |Test|Add0~36   ; |Test|Add0~36    ; out0             ;
+; |Test|Add0~37   ; |Test|Add0~37    ; out0             ;
+; |Test|Add0~38   ; |Test|Add0~38    ; out0             ;
+; |Test|Add0~39   ; |Test|Add0~39    ; out0             ;
+; |Test|Add0~40   ; |Test|Add0~40    ; out0             ;
+; |Test|Add0~41   ; |Test|Add0~41    ; out0             ;
+; |Test|Add0~42   ; |Test|Add0~42    ; out0             ;
+; |Test|Add0~43   ; |Test|Add0~43    ; out0             ;
+; |Test|Add0~44   ; |Test|Add0~44    ; out0             ;
+; |Test|Add0~45   ; |Test|Add0~45    ; out0             ;
+; |Test|Add0~46   ; |Test|Add0~46    ; out0             ;
+; |Test|Add0~47   ; |Test|Add0~47    ; out0             ;
+; |Test|Add0~48   ; |Test|Add0~48    ; out0             ;
+; |Test|Add0~49   ; |Test|Add0~49    ; out0             ;
+; |Test|Add0~50   ; |Test|Add0~50    ; out0             ;
+; |Test|Equal0~0  ; |Test|Equal0~0   ; out0             ;
++-----------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++-------------------------------------------------------+
+; Missing 0-Value Coverage                              ;
++-----------------+------------------+------------------+
+; Node Name       ; Output Port Name ; Output Port Type ;
++-----------------+------------------+------------------+
+; |Test|count~0   ; |Test|count~0    ; out              ;
+; |Test|count~1   ; |Test|count~1    ; out              ;
+; |Test|count~2   ; |Test|count~2    ; out              ;
+; |Test|count~3   ; |Test|count~3    ; out              ;
+; |Test|count~4   ; |Test|count~4    ; out              ;
+; |Test|count~5   ; |Test|count~5    ; out              ;
+; |Test|count~6   ; |Test|count~6    ; out              ;
+; |Test|count~7   ; |Test|count~7    ; out              ;
+; |Test|count~8   ; |Test|count~8    ; out              ;
+; |Test|count~9   ; |Test|count~9    ; out              ;
+; |Test|count~10  ; |Test|count~10   ; out              ;
+; |Test|count~11  ; |Test|count~11   ; out              ;
+; |Test|count~12  ; |Test|count~12   ; out              ;
+; |Test|count[26] ; |Test|count[26]  ; regout           ;
+; |Test|count[25] ; |Test|count[25]  ; regout           ;
+; |Test|count[24] ; |Test|count[24]  ; regout           ;
+; |Test|count[23] ; |Test|count[23]  ; regout           ;
+; |Test|count[22] ; |Test|count[22]  ; regout           ;
+; |Test|count[21] ; |Test|count[21]  ; regout           ;
+; |Test|count[20] ; |Test|count[20]  ; regout           ;
+; |Test|count[19] ; |Test|count[19]  ; regout           ;
+; |Test|count[18] ; |Test|count[18]  ; regout           ;
+; |Test|count[17] ; |Test|count[17]  ; regout           ;
+; |Test|count[16] ; |Test|count[16]  ; regout           ;
+; |Test|count[15] ; |Test|count[15]  ; regout           ;
+; |Test|count[14] ; |Test|count[14]  ; regout           ;
+; |Test|count[13] ; |Test|count[13]  ; regout           ;
+; |Test|count[12] ; |Test|count[12]  ; regout           ;
+; |Test|seconds   ; |Test|seconds    ; pin_out          ;
+; |Test|reset     ; |Test|reset      ; out              ;
+; |Test|Add0~25   ; |Test|Add0~25    ; out0             ;
+; |Test|Add0~26   ; |Test|Add0~26    ; out0             ;
+; |Test|Add0~27   ; |Test|Add0~27    ; out0             ;
+; |Test|Add0~28   ; |Test|Add0~28    ; out0             ;
+; |Test|Add0~29   ; |Test|Add0~29    ; out0             ;
+; |Test|Add0~30   ; |Test|Add0~30    ; out0             ;
+; |Test|Add0~31   ; |Test|Add0~31    ; out0             ;
+; |Test|Add0~32   ; |Test|Add0~32    ; out0             ;
+; |Test|Add0~33   ; |Test|Add0~33    ; out0             ;
+; |Test|Add0~34   ; |Test|Add0~34    ; out0             ;
+; |Test|Add0~35   ; |Test|Add0~35    ; out0             ;
+; |Test|Add0~36   ; |Test|Add0~36    ; out0             ;
+; |Test|Add0~37   ; |Test|Add0~37    ; out0             ;
+; |Test|Add0~38   ; |Test|Add0~38    ; out0             ;
+; |Test|Add0~39   ; |Test|Add0~39    ; out0             ;
+; |Test|Add0~40   ; |Test|Add0~40    ; out0             ;
+; |Test|Add0~41   ; |Test|Add0~41    ; out0             ;
+; |Test|Add0~42   ; |Test|Add0~42    ; out0             ;
+; |Test|Add0~43   ; |Test|Add0~43    ; out0             ;
+; |Test|Add0~44   ; |Test|Add0~44    ; out0             ;
+; |Test|Add0~45   ; |Test|Add0~45    ; out0             ;
+; |Test|Add0~46   ; |Test|Add0~46    ; out0             ;
+; |Test|Add0~47   ; |Test|Add0~47    ; out0             ;
+; |Test|Add0~48   ; |Test|Add0~48    ; out0             ;
+; |Test|Add0~49   ; |Test|Add0~49    ; out0             ;
+; |Test|Add0~50   ; |Test|Add0~50    ; out0             ;
+; |Test|Equal0~0  ; |Test|Equal0~0   ; out0             ;
++-----------------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 09 11:11:13 2023
+Info: Command: quartus_sim --simulation_results_format=VWF Test -c Test
+Info (324025): Using vector source file "D:/Homework/CE213/Lab/Lab03/Test/output_files/Waveform.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      47.71 %
+Info (328052): Number of transitions in simulation is 72268
+Info (324045): Vector file Test.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4444 megabytes
+    Info: Processing ended: Thu Nov 09 11:11:13 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

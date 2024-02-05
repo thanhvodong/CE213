@@ -1,0 +1,21 @@
+module four_bit_counter(
+	input clk, rst, 
+	output reg [3:0] count
+);
+   wire t1, t2, t3, t4;
+    // T Flip-Flop instances
+   t_flipflop ff1(.E(1'b1), .C(clk), .CLR(rst), .Q(t1));
+   t_flipflop ff2(.E(1'b1), .C(t1), .CLR(rst), .Q(t2));
+   t_flipflop ff3(.E(1'b1), .C(t2), .CLR(rst), .Q(t3));
+   t_flipflop ff4(.E(1'b1), .C(t3), .CLR(rst), .Q(t4));
+
+    // 4-bit counter logic
+    always @(posedge clk or negedge rst)
+    begin
+        if (rst == 0)    // Reset
+            count <= 4'b0;
+        else
+            count <= count + 1;  // Increment on each clock edge
+    end
+
+endmodule

@@ -1,0 +1,26 @@
+module Cau6_full(
+	input CLK, RST,
+	input [4:0] SWH,
+   input [5:0] SWM,
+   input [5:0] SWS,
+	output ERROR, CE,
+	output [4:0] Hours,
+   output [5:0] Minutes,
+   output [5:0] Seconds,
+	output [6:0] LED0,LED1,LED2,LED3,LED4,LED5 
+);
+wire [3:0] S_BCD_L,S_BCD_H,M_BCD_L,M_BCD_H,H_BCD_L,H_BCD_H;
+Cau6 CLOCK(.clk(CLK),.rst(RST),.swh(SWH),.swm(SWM),.sws(SWS), 
+			  .error(ERROR),.count_enable(CE),
+			  .S_bcd_l(S_BCD_L),.S_bcd_h(S_BCD_H),
+			  .M_bcd_l(M_BCD_L),.M_bcd_h(M_BCD_H),
+			  .H_bcd_l(H_BCD_L),.H_bcd_h(H_BCD_H),
+			  .H(Hours),.M(Minutes),.S(Seconds)
+			  );
+decoder LED_DECODER(.s_bcd_l(S_BCD_L),.s_bcd_h(S_BCD_H),
+			           .m_bcd_l(M_BCD_L),.m_bcd_h(M_BCD_H),
+			  	        .h_bcd_l(H_BCD_L),.h_bcd_h(H_BCD_H),
+						  .HEX0(LED0),.HEX1(LED1),.HEX2(LED2),
+						  .HEX3(LED3),.HEX4(LED4),.HEX5(LED5)
+						  );
+endmodule

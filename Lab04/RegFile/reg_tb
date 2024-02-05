@@ -1,0 +1,36 @@
+`timescale 1ns / 1ps
+
+module tb_reg;
+  reg clk, rst, write_en;
+  reg [4:0] read_address1, read_address2, write_address;
+  reg [31:0] write_data;
+  wire [31:0] read_data1, read_data2;
+  integer i;
+
+  reg register_file (
+    .clk(clk),
+    .rst(rst),
+    .A1(read_address1),
+    .A2(read_address2),
+    .A3(write_address),
+    .WD3(write_data),
+    .WE3(write_en),
+    .RD1(read_data1),
+    .RD2(read_data2)
+  );
+    
+    always #10 clk = ~clk;
+    initial begin
+    {clk, write_en, read_address1, read_address2, write_address, rst} <= 0;
+    #4; rst <= 1;
+    for (i = 0; i < 10; i= i+1) begin
+      @(posedge clk) write_address <= i; write_en <= 1; write_data <= $random;
+    end
+    
+    for (i = 0; i < 10; i= i+1) begin
+      @(posedge clk) read_address1 <= i; read_address2 <= 10-i; write_en <= 0;
+    end
+    
+    #20 $finish;
+  end
+endmodule

@@ -1,0 +1,233 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1
+valu
+Z1 !s100 fbK4<W=R3g<O0OiS9ggWK1
+Z2 IIP8UP]E1]6Of8COZn2`lL1
+Z3 VU^VK][6@EQBe29Q:ded<h2
+Z4 dD:\Homework\CE213\Lab\Lab06
+Z5 w1702182930
+Z6 8D:/Homework/CE213/Lab/Lab06/alu.v
+Z7 FD:/Homework/CE213/Lab/Lab06/alu.v
+L0 3
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/alu.v|
+Z10 o-work work -O0
+Z11 !s108 1702742351.311000
+Z12 !s107 D:/Homework/CE213/Lab/Lab06/alu.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vcontroller
+Z13 !s100 OzDL5_?k>jW<FJ9PWhA`j1
+Z14 IU962e4OVIknOljc<DZ=GL1
+Z15 VIMY404leEUH4XlgLOZ^GO2
+R4
+Z16 w1702183570
+Z17 8D:/Homework/CE213/Lab/Lab06/controller.v
+Z18 FD:/Homework/CE213/Lab/Lab06/controller.v
+L0 3
+R8
+r1
+31
+Z19 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/controller.v|
+R10
+Z20 !s108 1702742351.637000
+Z21 !s107 D:/Homework/CE213/Lab/Lab06/controller.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vdmem
+Z22 !s100 5:AOB0gQo]5P8fiAejzbF0
+Z23 I49kVCmae7XJzh`M4Q`GC:3
+Z24 V[Vl9;K6iZ;e<c2M0dKc:F1
+R4
+Z25 w1702182953
+Z26 8D:/Homework/CE213/Lab/Lab06/dmem.v
+Z27 FD:/Homework/CE213/Lab/Lab06/dmem.v
+L0 3
+R8
+r1
+31
+Z28 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/dmem.v|
+R10
+Z29 !s108 1702742351.358000
+Z30 !s107 D:/Homework/CE213/Lab/Lab06/dmem.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vimem
+Z31 !s100 XYSbaQSfH8jac5la1T?e70
+Z32 IaUHJAj>7OOjUL`c35E[Cg3
+Z33 V;_dRC`KSS<X9bCP0H9hH23
+R4
+Z34 w1702521574
+Z35 8D:/Homework/CE213/Lab/Lab06/imem.v
+Z36 FD:/Homework/CE213/Lab/Lab06/imem.v
+L0 1
+R8
+r1
+31
+Z37 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/imem.v|
+R10
+Z38 !s108 1702742351.390000
+Z39 !s107 D:/Homework/CE213/Lab/Lab06/imem.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vimm_gen
+Z40 !s100 A>Yj2R_eG;^U9c]58=aan0
+Z41 IWW[W=50kQc1T0B:ik?O633
+Z42 V9?F7>SJ>jmhFfTjTzhZf73
+R4
+Z43 w1702183010
+Z44 8D:/Homework/CE213/Lab/Lab06/imm_gen.v
+Z45 FD:/Homework/CE213/Lab/Lab06/imm_gen.v
+L0 3
+R8
+r1
+31
+Z46 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/imm_gen.v|
+R10
+Z47 !s108 1702742351.421000
+Z48 !s107 D:/Homework/CE213/Lab/Lab06/imm_gen.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmux
+Z49 !s100 dcaXUL9][W^BmcfdcH1=B0
+Z50 I7gSR_FmX5He`m1_6_g`]F1
+Z51 V5_T_4BXMcJPCK5;8FUmDl2
+R4
+Z52 w1702183086
+Z53 8D:/Homework/CE213/Lab/Lab06/mux.v
+Z54 FD:/Homework/CE213/Lab/Lab06/mux.v
+L0 4
+R8
+r1
+31
+Z55 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/mux.v|
+R10
+Z56 !s108 1702742351.473000
+Z57 !s107 D:/Homework/CE213/Lab/Lab06/mux.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vmux5bit
+Z58 !s100 5LG^QeO?Ph`]Bc<Nb8;[a1
+Z59 IZ<Y1lXfQHnjNb<PFfTZVE2
+Z60 V]h@[^^=<JdGfe2^zmC<[A3
+R4
+Z61 w1702183116
+Z62 8D:/Homework/CE213/Lab/Lab06/mux5bit.v
+Z63 FD:/Homework/CE213/Lab/Lab06/mux5bit.v
+L0 4
+R8
+r1
+31
+Z64 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/mux5bit.v|
+R10
+Z65 !s108 1702742351.500000
+Z66 !s107 D:/Homework/CE213/Lab/Lab06/mux5bit.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vpc
+Z67 !s100 WDdH>?c2l9amQc=9FK38z2
+Z68 IHiK4X>?:QU=Z0P9K`^KX`1
+Z69 V=:khL`@WX3[_E>4:_Qh[E1
+R4
+Z70 w1702521744
+Z71 8D:/Homework/CE213/Lab/Lab06/pc.v
+Z72 FD:/Homework/CE213/Lab/Lab06/pc.v
+L0 1
+R8
+r1
+31
+Z73 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/pc.v|
+R10
+Z74 !s108 1702742351.545000
+Z75 !s107 D:/Homework/CE213/Lab/Lab06/pc.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vpc_adder
+Z76 !s100 z7z6j:L5Pa7RQ_;^>4bz=2
+Z77 IXg8c7_Zm=`90Z8C<nBLTO2
+Z78 VOoJX?Gmk?9k@ln7jH2LDc3
+R4
+Z79 w1702183342
+Z80 8D:/Homework/CE213/Lab/Lab06/pc_adder.v
+Z81 FD:/Homework/CE213/Lab/Lab06/pc_adder.v
+L0 1
+R8
+r1
+31
+Z82 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/pc_adder.v|
+R10
+Z83 !s108 1702742351.575000
+Z84 !s107 D:/Homework/CE213/Lab/Lab06/pc_adder.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vreg_file
+Z85 IZd81DPfR1IQhJEC`?L^A^2
+Z86 VXG^[k?VdYcZWE1TH>NG0V1
+R4
+Z87 w1702742349
+Z88 8D:/Homework/CE213/Lab/Lab06/reg_file.v
+Z89 FD:/Homework/CE213/Lab/Lab06/reg_file.v
+L0 3
+R8
+r1
+31
+Z90 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/reg_file.v|
+R10
+Z91 !s100 6N]Yb`nVF?9VNZcoaI=^91
+Z92 !s108 1702742351.606000
+Z93 !s107 D:/Homework/CE213/Lab/Lab06/reg_file.v|
+!i10b 1
+!s85 0
+!s101 -O0
+vtb_top
+!i10b 1
+Z94 !s100 h1mh8]fXd7Q8OM01BP;HN3
+Z95 I>YJi`S?0j<2?CSFXfQaS53
+Z96 V[LcaLh[SJXomY3Ki^RaI?1
+R4
+Z97 w1702522984
+Z98 8D:/Homework/CE213/Lab/Lab06/tb_top.v
+Z99 FD:/Homework/CE213/Lab/Lab06/tb_top.v
+L0 2
+R8
+r1
+!s85 0
+31
+!s108 1702742351.716000
+!s107 D:/Homework/CE213/Lab/Lab06/tb_top.v|
+Z100 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/tb_top.v|
+!s101 -O0
+R10
+vtop
+Z101 !s100 0][]f2>TO253DDbR5hn5R3
+Z102 Ie>Id3>fJBe@=;SW?MhR;62
+Z103 ViDh`IaFQQ27SUg9D:^[?H1
+R4
+Z104 w1702740440
+Z105 8D:/Homework/CE213/Lab/Lab06/top.v
+Z106 FD:/Homework/CE213/Lab/Lab06/top.v
+L0 3
+R8
+r1
+31
+Z107 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab06/top.v|
+R10
+!i10b 1
+!s85 0
+Z108 !s108 1702742351.673000
+Z109 !s107 D:/Homework/CE213/Lab/Lab06/top.v|
+!s101 -O0

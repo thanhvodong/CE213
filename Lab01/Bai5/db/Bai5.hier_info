@@ -1,0 +1,70 @@
+|D_flipflop_3bit
+D_3b => D_3b~0.IN3
+Clock_3bit => Clock_3bit~0.IN2
+Qa_3b <= D_latch:Latch.Qa
+Qa_not_3b <= D_latch:Latch.Qb
+Qb_3b <= D_flipflop:FF1.Q
+Qb_not_3b <= D_flipflop:FF1.Qnot
+Qc_3b <= D_flipflop:FF2.Q
+Qc_not_3b <= D_flipflop:FF2.Qnot
+
+
+|D_flipflop_3bit|D_latch:Latch
+d => S_g.IN0
+d => R_g.IN0
+clk => S_g.IN1
+clk => R_g.IN1
+Qa <= Qa~0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_flipflop_3bit|D_flipflop:FF1
+D => D~0.IN1
+Clock => Clock~0.IN1
+Q <= D_latch:Slave.Qa
+Qnot <= D_latch:Slave.Qb
+
+
+|D_flipflop_3bit|D_flipflop:FF1|D_latch:Master
+d => S_g.IN0
+d => R_g.IN0
+clk => S_g.IN1
+clk => R_g.IN1
+Qa <= Qa~0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_flipflop_3bit|D_flipflop:FF1|D_latch:Slave
+d => S_g.IN0
+d => R_g.IN0
+clk => S_g.IN1
+clk => R_g.IN1
+Qa <= Qa~0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_flipflop_3bit|D_flipflop:FF2
+D => D~0.IN1
+Clock => Clock~0.IN1
+Q <= D_latch:Slave.Qa
+Qnot <= D_latch:Slave.Qb
+
+
+|D_flipflop_3bit|D_flipflop:FF2|D_latch:Master
+d => S_g.IN0
+d => R_g.IN0
+clk => S_g.IN1
+clk => R_g.IN1
+Qa <= Qa~0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_flipflop_3bit|D_flipflop:FF2|D_latch:Slave
+d => S_g.IN0
+d => R_g.IN0
+clk => S_g.IN1
+clk => R_g.IN1
+Qa <= Qa~0.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

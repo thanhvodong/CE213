@@ -1,0 +1,8 @@
+module D_flipflop(
+	input D,Clock,
+	output Q,Qnot
+);
+	wire Qm,Qs,nClk;
+	not(nClk,Clock);
+	
+endmodule

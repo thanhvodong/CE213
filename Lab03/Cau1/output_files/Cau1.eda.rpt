@@ -1,0 +1,96 @@
+EDA Netlist Writer report for Cau1
+Thu Nov 09 11:38:59 2023
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Thu Nov 09 11:38:59 2023 ;
+; Revision Name             ; Cau1                                  ;
+; Top-level Entity Name     ; Cau1                                  ;
+; Family                    ; Cyclone II                            ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                    ;
++---------------------------------------------------------------------------------------------------+--------------------+
+; Option                                                                                            ; Setting            ;
++---------------------------------------------------------------------------------------------------+--------------------+
+; Tool Name                                                                                         ; ModelSim (Verilog) ;
+; Generate netlist for functional simulation only                                                   ; Off                ;
+; Time scale                                                                                        ; 1 ps               ;
+; Truncate long hierarchy paths                                                                     ; Off                ;
+; Map illegal HDL characters                                                                        ; Off                ;
+; Flatten buses into individual nodes                                                               ; Off                ;
+; Maintain hierarchy                                                                                ; Off                ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                ;
+; Enable glitch filtering                                                                           ; Off                ;
+; Do not write top level VHDL entity                                                                ; Off                ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                ;
+; Architecture name in VHDL output netlist                                                          ; structure          ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                ;
++---------------------------------------------------------------------------------------------------+--------------------+
+
+
++----------------------------------------------------------------------+
+; Simulation Generated Files                                           ;
++----------------------------------------------------------------------+
+; Generated Files                                                      ;
++----------------------------------------------------------------------+
+; D:/Homework/CE213/Lab/Lab03/Cau1/simulation/modelsim/Cau1.vo         ;
+; D:/Homework/CE213/Lab/Lab03/Cau1/simulation/modelsim/Cau1_fast.vo    ;
+; D:/Homework/CE213/Lab/Lab03/Cau1/simulation/modelsim/Cau1_v.sdo      ;
+; D:/Homework/CE213/Lab/Lab03/Cau1/simulation/modelsim/Cau1_v_fast.sdo ;
++----------------------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit EDA Netlist Writer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Nov 09 11:38:59 2023
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Cau1 -c Cau1
+Info (204026): Generated files "Cau1.vo", "Cau1_fast.vo", "Cau1_v.sdo" and "Cau1_v_fast.sdo" in directory "D:/Homework/CE213/Lab/Lab03/Cau1/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4523 megabytes
+    Info: Processing ended: Thu Nov 09 11:38:59 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

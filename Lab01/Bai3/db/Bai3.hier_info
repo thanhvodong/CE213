@@ -1,0 +1,25 @@
+|segment7_decoder
+C[0] => Equal0.IN2
+C[0] => Equal1.IN0
+C[0] => Equal2.IN2
+C[0] => Equal3.IN1
+C[0] => Equal4.IN2
+C[1] => Equal0.IN1
+C[1] => Equal1.IN2
+C[1] => Equal2.IN0
+C[1] => Equal3.IN0
+C[1] => Equal4.IN1
+C[2] => Equal0.IN0
+C[2] => Equal1.IN1
+C[2] => Equal2.IN1
+C[2] => Equal3.IN2
+C[2] => Equal4.IN0
+seg[0] <= seg~9.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= <GND>
+seg[2] <= <GND>
+seg[3] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= seg~8.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= seg~7.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= seg~6.DB_MAX_OUTPUT_PORT_TYPE
+
+

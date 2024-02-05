@@ -1,0 +1,32 @@
+module counter(
+    input wire reset,    
+    input wire clk1Hz,   
+    output reg [4:0] count, 
+    output reg [3:0] bcd_high, 
+    output reg [3:0] bcd_low   
+);
+
+always @(posedge clk1Hz or posedge reset) begin
+    if (reset) begin
+        count <= 8'b0_0000; 
+        bcd_high <= 4'b0000;
+        bcd_low <= 4'b0000;
+    end
+    else if (count < 5'b10100) begin
+        count <= count + 1;
+        if (count[3:0] < 5'b1001) begin
+            bcd_low <= bcd_low + 1;
+        end
+        else begin
+            bcd_low <= 4'b0000;
+            bcd_high <= bcd_high + 1;
+        end
+    end
+    else begin
+        count <= 8'b0_0000; 
+        bcd_high <= 4'b0000;
+        bcd_low <= 4'b0000;
+    end
+end
+
+endmodule

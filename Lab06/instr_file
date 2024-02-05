@@ -1,0 +1,370 @@
+
+
+#include "main.h"
+#include "cmsis_os.h"
+#include "usb_device.h"
+#include "usbd_cdc_if.h"
+#include "stm32f429i_discovery_lcd.h"
+
+#define DT 0.01         // [s/loop] loop period. 20ms
+#define G_GAIN 0.070     // [deg/s/LSB]
+#define RAD_TO_DEG 57.29578
+#define M_PI 3.14159265358979323846
+
+osThreadId Task01Handle;
+osThreadId Task02Handle;
+osThreadId Task03Handle;
+osThreadId Task04Handle;
+osThreadId Task05Handle;
+osMessageQId Queue01Handle;
+osMessageQId Queue02Handle;
+osMessageQId Queue03Handle;
+
+float val[3];
+char LCD_send[30];
+char USB_send[30];
+float rate_gyr_y = 0.0;   // [deg/s]
+float rate_gyr_x = 0.0;   // [deg/s]
+float rate_gyr_z = 0.0;   // [deg/s]
+float gyroXangle = 0.0;
+float gyroYangle = 0.0;
+float gyroZangle = 0.0;
+float tmpX = 0.0;
+float tmpY = 0.0;
+float tmpY1 = 0.0;
+uint16_t high = 50;
+uint16_t RX = 120;
+uint16_t RY = 170;
+uint16_t x = 5;
+uint16_t flag = 0;
+uint16_t ponk = 0;
+uint16_t score = 0;
+uint16_t loose = 0;
+uint16_t h = 0;
+uint16_t inc = 1;
+uint16_t mode = 1;
+typedef struct
+{
+  float x_ang_rate;
+  float y_ang_rate;
+  float z_ang_rate;
+
+} GYRO_DATA_T;
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+void StartTask01(void const * argument);
+void StartTask02(void const * argument);
+void StartTask03(void const * argument);
+void StartTask04(void const * argument);
+void StartTask05(void const * argument);
+
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+  MX_GPIO_Init();
+  BSP_LCD_Init();
+  BSP_LCD_LayerDefaultInit(1, SDRAM_DEVICE_ADDR);
+  BSP_LCD_SelectLayer(1);
+  BSP_LCD_DisplayOn();
+  BSP_LCD_Clear(LCD_COLOR_GREEN);
+  BSP_LCD_SetBackColor(LCD_COLOR_GREEN);
+  BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
+
+  osMessageQDef(Queue01, 16, GYRO_DATA_T);
+  Queue01Handle = osMessageCreate(osMessageQ(Queue01), NULL);
+
+  osMessageQDef(Queue02, 16, uint16_t);
+  Queue02Handle = osMessageCreate(osMessageQ(Queue02), NULL);
+
+  osMessageQDef(Queue03, 16, uint16_t);
+  Queue03Handle = osMessageCreate(osMessageQ(Queue03), NULL);
+
+  osThreadDef(Task01, StartTask01, osPriorityNormal, 0, 128);
+  Task01Handle = osThreadCreate(osThread(Task01), NULL);
+
+  osThreadDef(Task02, StartTask02, osPriorityNormal, 0, 128);
+  Task02Handle = osThreadCreate(osThread(Task02), NULL);
+
+  osThreadDef(Task03, StartTask03, osPriorityNormal, 0, 128);
+  Task03Handle = osThreadCreate(osThread(Task03), NULL);
+
+  osThreadDef(Task04, StartTask04, osPriorityNormal, 0, 256);
+  Task04Handle = osThreadCreate(osThread(Task04), NULL);
+
+  osThreadDef(Task05, StartTask05, osPriorityIdle, 0, 128);
+  Task05Handle = osThreadCreate(osThread(Task05), NULL);
+
+  osKernelStart();
+
+  while (1)
+  {
+  }
+}
+
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLN = 336;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 7;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV4;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOG_CLK_ENABLE();
+
+  HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13|GPIO_PIN_14, GPIO_PIN_RESET);
+
+  GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+
+}
+
+void GYRO_Task(void)
+{
+	BSP_GYRO_Init();
+	GYRO_DATA_T gyro_data;
+	osSignalWait(0x1, osWaitForever); 
+	for (;;)
+	  {
+		BSP_GYRO_GetXYZ(val);
+		rate_gyr_x = val[0]  * G_GAIN;
+		rate_gyr_y = val[1]  * G_GAIN;
+		rate_gyr_z = val[2]  * G_GAIN;
+		//BSP_LCD_FillTriangle(120,95,145,10,50,50);
+		gyro_data.x_ang_rate+=rate_gyr_x*DT;
+		gyro_data.y_ang_rate+=rate_gyr_y*DT;
+		gyro_data.z_ang_rate+=rate_gyr_z*DT;
+		if (gyro_data.x_ang_rate > 360){
+			gyro_data.x_ang_rate = 360;
+		}
+		tmpY = tmpX;
+	    gyro_tx->x_ang_rate = gyro_data.x_ang_rate;
+	    gyro_tx->y_ang_rate = gyro_data.y_ang_rate;
+	    gyro_tx->z_ang_rate = gyro_data.z_ang_rate;*/
+		osMessagePut(Queue01Handle, (uint32_t)&gyro_data, 0); //Put data into mail queue.
+	    osEvent event1 = osMessageGet(Queue02Handle, osWaitForever); //Get queue
+	    h = event1.value.p;
+	    if ((gyro_data.x_ang_rate-tmpX)>=10 && h<70 && h>50 && RX>110 && RX<140 && RY>160 && RY<190 && inc == 0){
+	    	high = 60;
+	    	RY = 170;
+	    	RX = 120;
+	    	if ((gyro_data.x_ang_rate-tmpX)>=50){
+	    		mode = 1;
+	    	}
+	    	else{
+	    		mode = 2;
+	    	}
+	    	ponk = 1;
+	    	osDelay(100);
+	    	ponk = 0;
+	    	flag = 0;
+	    }
+	    else if (h == 30 || RY == 190 || RX == 140){
+	    	loose = 1;
+	    }
+	    	  tmpX = gyro_data.x_ang_rate;
+	    	  osDelay(100);
+	    	  gyro_data.x_ang_rate = 0;
+	  }
+}
+
+void SCORE_Task(void)
+{
+	for(;;){
+		if (ponk == 1){
+			score = score + 1;
+			osDelay(200);
+			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
+			osDelay(200);
+			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
+		}
+		if (loose == 1)
+			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, GPIO_PIN_SET);
+	}
+}
+
+void LCD_Task(void)
+{
+	for (;;)
+	{
+		    if (mode == 1){
+		    	BSP_LCD_Clear(LCD_COLOR_DARKCYAN);
+		    	BSP_LCD_SetBackColor(LCD_COLOR_DARKCYAN); 
+		    	sprintf (LCD_send,"score = %d,%d",score,h);
+		    	BSP_LCD_DisplayStringAtLine(1,LCD_send); 
+		    	BSP_LCD_FillCircle(RX,RY,high); 
+		    	Mode1();
+		    }
+		    else if (mode == 2){
+		    	BSP_LCD_Clear(LCD_COLOR_DARKCYAN);
+		    	BSP_LCD_SetBackColor(LCD_COLOR_DARKCYAN);
+		    	sprintf (LCD_send,"score = %d,%d",score,RY);
+		    	BSP_LCD_DisplayStringAtLine(1,LCD_send);
+		    	BSP_LCD_FillCircle(RX,RY,high);
+		    	Mode2();
+		    }
+	}
+}
+
+void Mode1(void) 
+{
+	if (flag == 0){
+		high= high + x;
+		inc = 1;
+		if (high == 120){
+			flag = 1;
+		}
+	}
+	else if (flag == 1){
+		high = high - x;
+		inc = 0;
+		if (high == 20){
+			flag = 0;
+		}
+	}
+	osMessagePut(Queue02Handle, high, 0);
+	osDelay(100);
+}
+
+void Mode2(void) 
+{
+	if (flag == 0){
+		RY= RY - 10;
+		inc = 1;
+		if (RY == 80){
+			flag = 1;
+		}
+	}
+	else if (flag == 1){
+		RY = RY + 10;
+		inc = 0;
+		if (RY == 220)	{
+			flag = 0;
+		}
+	}
+	osMessagePut(Queue02Handle, high, 0);
+	osDelay(100);
+}
+
+void USB_Task(void)
+{
+	osSignalWait(0x1, 400);                        
+	//BSP_LCD_FillTriangle(120,95,145,10,50,50);
+	osSignalSet(Task02Handle, 0x1);                          
+	for (;;)
+	{
+		if (mode == 1){
+			sprintf(USB_send,"high = %d\n",h);
+		}
+		else if (mode == 2){
+			sprintf(USB_send,"high = %d\n",RY);
+		}
+		CDC_Transmit_HS(USB_send,strlen(USB_send));
+		osDelay(100);
+	}
+}
+
+void GameOver(void)
+{
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, GPIO_PIN_SET);
+}
+
+void StartTask01(void const * argument)
+{
+	LCD_Task();
+  for(;;)
+  {
+    osDelay(1);
+  }
+}
+
+void StartTask02(void const * argument)
+{
+
+	GYRO_Task();
+  for(;;)
+  {
+    osDelay(1);
+  }
+}
+
+void StartTask03(void const * argument)
+{
+
+	SCORE_Task();
+  for(;;)
+  {
+    osDelay(1);
+  }
+
+}
+void StartTask04(void const * argument)
+{
+	MX_USB_DEVICE_Init();
+	USB_Task();
+  for(;;)
+  {
+    osDelay(1);
+  }
+}
+
+void StartTask05(void const * argument)
+{
+  for(;;)
+  {
+    osDelay(1);
+  }
+}
+
+void Error_Handler(void)
+{
+  __disable_irq();
+  while (1)
+  {
+  }
+}
+
+#ifdef  USE_FULL_ASSERT
+
+void assert_failed(uint8_t *file, uint32_t line)
+{
+
+}
+#endif
+

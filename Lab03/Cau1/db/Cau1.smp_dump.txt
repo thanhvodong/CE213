@@ -1,0 +1,12 @@
+
+State Machine - |Cau1|state
+Name state.s5 state.s4 state.s6 state.s7 state.s2 state.s3 state.s1 state.s0 state.s8 
+state.s0 0 0 0 0 0 0 0 0 0 
+state.s1 0 0 0 0 0 0 1 1 0 
+state.s3 0 0 0 0 0 1 0 1 0 
+state.s2 0 0 0 0 1 0 0 1 0 
+state.s7 0 0 0 1 0 0 0 1 0 
+state.s6 0 0 1 0 0 0 0 1 0 
+state.s4 0 1 0 0 0 0 0 1 0 
+state.s5 1 0 0 0 0 0 0 1 0 
+state.s8 0 0 0 0 0 0 0 1 1 

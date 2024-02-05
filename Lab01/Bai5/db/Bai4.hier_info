@@ -1,0 +1,25 @@
+|D_flipflop
+D => D.IN1
+Clock => Clock.IN1
+Q <= D_latch:Slave.Qa
+Qnot <= D_latch:Slave.Qb
+
+
+|D_flipflop|D_latch:Master
+d => S_g.IN0
+d => R_g.IN0
+clk => S_g.IN1
+clk => R_g.IN1
+Qa <= Qa.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_flipflop|D_latch:Slave
+d => S_g.IN0
+d => R_g.IN0
+clk => S_g.IN1
+clk => R_g.IN1
+Qa <= Qa.DB_MAX_OUTPUT_PORT_TYPE
+Qb <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+

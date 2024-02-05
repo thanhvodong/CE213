@@ -1,0 +1,94 @@
+|Bai4
+in[0] => in[0]~3.IN3
+in[1] => in[1]~2.IN3
+in[2] => in[2]~1.IN3
+in[3] => in[3]~0.IN2
+out1[0] <= CircuitB:B.port1
+out1[1] <= CircuitB:B.port1
+out1[2] <= CircuitB:B.port1
+out1[3] <= CircuitB:B.port1
+out1[4] <= CircuitB:B.port1
+out1[5] <= CircuitB:B.port1
+out1[6] <= CircuitB:B.port1
+out0[0] <= DECODER:de.port1
+out0[1] <= DECODER:de.port1
+out0[2] <= DECODER:de.port1
+out0[3] <= DECODER:de.port1
+out0[4] <= DECODER:de.port1
+out0[5] <= DECODER:de.port1
+out0[6] <= DECODER:de.port1
+
+
+|Bai4|comparator:Compare
+in[0] => LessThan0.IN8
+in[1] => LessThan0.IN7
+in[2] => LessThan0.IN6
+in[3] => LessThan0.IN5
+out <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Bai4|CircuitB:B
+in => out[5].DATAIN
+in => out[4].DATAIN
+in => out[3].DATAIN
+in => out[0].DATAIN
+out[0] <= in.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= <VCC>
+out[2] <= <VCC>
+out[3] <= in.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= in.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= in.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= <GND>
+
+
+|Bai4|CircuitA:A
+in[0] => out[0].DATAIN
+in[1] => Decoder0.IN1
+in[2] => Decoder0.IN0
+out[0] <= in[0].DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Bai4|mux2to1:Mux3
+in1 => out~0.DATAA
+in2 => out~0.DATAB
+select => out~0.OUTPUTSELECT
+out <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Bai4|mux2to1:Mux2
+in1 => out~0.DATAA
+in2 => out~0.DATAB
+select => out~0.OUTPUTSELECT
+out <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Bai4|mux2to1:Mux1
+in1 => out~0.DATAA
+in2 => out~0.DATAB
+select => out~0.OUTPUTSELECT
+out <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Bai4|mux2to1:Mux0
+in1 => out~0.DATAA
+in2 => out~0.DATAB
+select => out~0.OUTPUTSELECT
+out <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Bai4|DECODER:de
+in[0] => Decoder0.IN3
+in[1] => Decoder0.IN2
+in[2] => Decoder0.IN1
+in[3] => Decoder0.IN0
+out[0] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out~0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

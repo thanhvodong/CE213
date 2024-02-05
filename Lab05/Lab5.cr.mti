@@ -1,0 +1,57 @@
+D:/Homework/CE213/Lab/Lab05/alu.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/alu.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} D:/Homework/CE213/Lab/Lab05/mux.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/mux.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mux
+
+Top level modules:
+	mux
+
+} {} {}} D:/Homework/CE213/Lab/Lab05/mux5bit.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/mux5bit.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module mux5bit
+
+Top level modules:
+	mux5bit
+
+} {} {}} D:/Homework/CE213/Lab/Lab05/top.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/top.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}} D:/Homework/CE213/Lab/Lab05/dmem.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/dmem.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module dmem
+
+Top level modules:
+	dmem
+
+} {} {}} D:/Homework/CE213/Lab/Lab05/imm_gen.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/imm_gen.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module imm_gen
+
+Top level modules:
+	imm_gen
+
+} {} {}} D:/Homework/CE213/Lab/Lab05/top_tb.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/top_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module tb_top
+
+Top level modules:
+	tb_top
+
+} {} {}} D:/Homework/CE213/Lab/Lab05/reg_file.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab05/reg_file.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module reg_file
+
+Top level modules:
+	reg_file
+
+} {} {}}

@@ -1,0 +1,87 @@
+`timescale 1ns / 1ps
+
+module top(
+    input clk,
+    input rst,
+    input [31:0] instr
+    );
+    //control signal
+    wire [31:0] rd1, rd2, imm, B_alu, alu_result, mem, wd;
+    wire [4:0] wr_addr;
+    wire [2:0] alu_control;
+    wire RegDst, RegWrite, MemWrite, ALUsrc, MemToReg;
+    //other signal
+    wire [31:0]  address;
+
+  /*
+    pc pc_instance (
+        .rst(rst),
+        .clk(clk),
+        .address(address)
+    );
+    
+    imem instr_mem (
+        .address(address),
+        .RD(instr)
+    );
+    */
+    controller controller (
+        .opcode(instr[31:26]),
+        .RegDst(RegDst), 
+        .RegWrite(RegWrite), 
+        .ALUsrc(ALUsrc), 
+        .MemWrite(MemWrite), 
+        .MemRead(MemRead), 
+        .MemToReg(MemToReg),
+        .alu_control(alu_control)
+    );
+    
+    mux5bit muxA (
+        .a(instr[20:16]),
+        .b(instr[15:11]),
+        .s(RegDst),
+        .c(wr_addr)
+    );
+    reg_file register_file (
+        .clk(clk),
+        .rst(rst),
+        .ReadAddress1(instr[25:21]),
+        .ReadAddress2(instr[20:16]),
+        .WriteAddress(wr_addr),
+        .WriteData(wd),
+        .WE3(RegWrite),
+        .ReadData1(rd1),
+        .ReadData2(rd2)
+    );
+    imm_gen sign_exten (
+        .instr(instr[15:0]),
+        .imm_out(imm)
+    );
+    mux muxB (
+        .a(rd2),
+        .b(imm),
+        .c(B_alu),
+        .s(ALUsrc)
+    );
+    alu ALU (
+        .a(rd1),
+        .b(B_alu),
+        .f(alu_control),
+        .out(alu_result),
+        .is0(iszero)
+    );
+    dmem data_mem (
+        .clk(clk),
+        .rst(rst),
+        .address(alu_result),
+        .MemRW(MemWrite),
+        .DataR(mem),
+        .DataW(rs2)
+    );
+    mux muxC (
+        .b(mem),
+        .a(alu_result),
+        .s(MemToReg),
+        .c(wd)
+    );
+endmodule

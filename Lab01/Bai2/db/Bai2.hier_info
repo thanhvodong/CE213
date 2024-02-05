@@ -1,0 +1,29 @@
+|mux5to1_3bit
+U[0] => M~17.DATAB
+U[1] => M~16.DATAB
+U[2] => M~15.DATAB
+V[0] => M~14.DATAB
+V[1] => M~13.DATAB
+V[2] => M~12.DATAB
+W[0] => M~11.DATAB
+W[1] => M~10.DATAB
+W[2] => M~9.DATAB
+X[0] => M~8.DATAB
+X[1] => M~7.DATAB
+X[2] => M~6.DATAB
+Y[0] => M~8.DATAA
+Y[1] => M~7.DATAA
+Y[2] => M~6.DATAA
+s0 => M~2.IN1
+s0 => M~5.IN1
+s0 => M~3.IN1
+s0 => M~0.IN1
+s1 => M~4.IN0
+s1 => M~1.IN0
+s2 => M~4.IN1
+s2 => M~1.IN1
+M[0] <= M~17.DB_MAX_OUTPUT_PORT_TYPE
+M[1] <= M~16.DB_MAX_OUTPUT_PORT_TYPE
+M[2] <= M~15.DB_MAX_OUTPUT_PORT_TYPE
+
+

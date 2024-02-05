@@ -1,0 +1,15 @@
+D:/Homework/CE213/Lab/Lab04/alu_tb.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab04/alu_tb.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu_tb
+
+Top level modules:
+	alu_tb
+
+} {} {}} D:/Homework/CE213/Lab/Lab04/alu.v {1 {vlog -work work D:/Homework/CE213/Lab/Lab04/alu.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}}

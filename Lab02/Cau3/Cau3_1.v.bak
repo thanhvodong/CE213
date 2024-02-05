@@ -1,0 +1,10 @@
+module Cau3_1(
+	input CLK,RST,
+	output reg [6:0] HEX
+); 
+	wire [3:0] BCD;
+	Counter_BCD Counter(.clk(CLK),.rst(RST).bcd(BCD));
+	bcd_to_led7 Decoder(BCD,.seg(HEX));
+endmodule
+	
+	

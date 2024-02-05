@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1
+valu
+Z1 I0^@^CB_>DgjREXcT4@PC90
+Z2 VR8llAf[d[]z2Qi_@4XIJ91
+Z3 dD:\Homework\CE213\Lab\Lab04
+Z4 w1701593537
+Z5 8D:/Homework/CE213/Lab/Lab04/alu.v
+Z6 FD:/Homework/CE213/Lab/Lab04/alu.v
+L0 3
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 <^1L7Im5dn<9HKVg6_n9:3
+!s85 0
+Z10 !s108 1701593832.744000
+Z11 !s107 D:/Homework/CE213/Lab/Lab04/alu.v|
+Z12 !s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab04/alu.v|
+!s101 -O0
+valu_tb
+!i10b 1
+!s100 iRk]_;TA=11NCWJ=12lPE3
+IPRaA2XiU22m1<gE_zdXgF3
+VL;=kgzZ7GJ2Reg7Z1GkmR2
+R3
+w1701593786
+8D:/Homework/CE213/Lab/Lab04/alu_tb.v
+FD:/Homework/CE213/Lab/Lab04/alu_tb.v
+L0 3
+R7
+r1
+!s85 0
+31
+!s108 1701593832.784000
+!s107 D:/Homework/CE213/Lab/Lab04/alu_tb.v|
+!s90 -reportprogress|300|-work|work|D:/Homework/CE213/Lab/Lab04/alu_tb.v|
+!s101 -O0
+R8

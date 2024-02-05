@@ -1,0 +1,11 @@
+module D_latch(
+	input D,Clk
+	output Qa,Qb
+);
+	wire S,R,S_g,R_g;
+	not(D,R);
+	nand(S,Clk,S_g);
+	nand(R,Clk,R_g);
+	nand(S_g,Qb,Qa);
+	nand(R_g,Qa,Qb);
+endmodule

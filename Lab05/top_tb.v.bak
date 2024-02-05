@@ -1,0 +1,77 @@
+`timescale 1ns / 1ps
+
+module testbench;
+
+  // Inputs
+  reg clk;
+  reg rst;
+  reg [31:0] instr;
+  reg [4:0] alu_control;
+  reg RegDst, RegWrite, ALUsrc, MemWrite, MemRead, MemToReg;
+
+  // Outputs
+  wire iszero;
+
+  // Instantiate the top module
+  top uut (
+    .clk(clk),
+    .rst(rst),
+    .instr(instr),
+    .iszero(iszero),
+    .alu_control(alu_control),
+    .RegDst(RegDst),
+    .RegWrite(RegWrite),
+    .ALUsrc(ALUsrc),
+    .MemWrite(MemWrite),
+    .MemRead(MemRead),
+    .MemToReg(MemToReg)
+  );
+
+  // Clock generation
+  initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+  end
+
+  // Stimulus
+  initial begin
+    // Initialize inputs
+    rst = 0;
+    
+    // add $t1, $t2, $t3
+    instr = 32'h01322020; // This is the instruction for add $t1, $t2, $t3
+    alu_control = 5'b00000; // Set ALU control for addition
+    RegDst = 1;
+    RegWrite = 1;
+    ALUsrc = 0;
+    MemWrite = 0;
+    MemRead = 0;
+    MemToReg = 0;
+    #10;
+
+    // lw $t1, 0($t2)
+    instr = 32'h8D220000; // This is the instruction for lw $t1, 0($t2)
+    alu_control = 5'b00100; // Set ALU control for address calculation (addition)
+    RegDst = 1;
+    RegWrite = 1;
+    ALUsrc = 1;
+    MemWrite = 0;
+    MemRead = 1;
+    MemToReg = 1;
+    #10;
+
+    // sw $t1, 0($t2)
+    instr = 32'hAD220000; // This is the instruction for sw $t1, 0($t2)
+    alu_control = 5'b00100; // Set ALU control for address calculation (addition)
+    RegDst = 0;
+    RegWrite = 0;
+    ALUsrc = 1;
+    MemWrite = 1;
+    MemRead = 0;
+    MemToReg = 0;
+    #10;
+    
+    #100 $stop; // Stop simulation after some time
+  end
+
+endmodule

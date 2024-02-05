@@ -1,0 +1,6 @@
+module Cau2_final(
+	input clk,
+	output R1,R2,G1,G2,Y1,Y2
+);
+	wire s;
+clock_1Hz Clock_gen(.clk(clk_50),.s(clk_1Hz));

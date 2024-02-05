@@ -1,0 +1,8 @@
+module Cau5_test(
+	input wire CLOCK_50HZ, RESET,
+	output hex0,hex1
+);
+wire BCD_H, BCD_L;
+counter COUNTER(.reset(RESET),.clk1Hz(CLOCK_50HZ),.bcd_high(BCD_H),.bcd_low(BCD_L));
+decoder DECODER(.bcd_h(BCD),.bcd_l(BCD_L),.HEX0(hex0),.HEX1(hex1));
+endmodule

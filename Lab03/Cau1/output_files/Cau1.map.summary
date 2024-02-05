@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Nov 09 11:38:50 2023
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : Cau1
+Top-level Entity Name : Cau1
+Family : Cyclone II
+Total logic elements : 11
+    Total combinational functions : 11
+    Dedicated logic registers : 8
+Total registers : 8
+Total pins : 4
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

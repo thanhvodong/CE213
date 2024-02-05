@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at four_bit_counter.v(5): object "t3" differs only in case from object "T3" in the same scope
+Info (10281): Verilog HDL Declaration information at four_bit_counter.v(5): object "t2" differs only in case from object "T2" in the same scope
+Info (10281): Verilog HDL Declaration information at four_bit_counter.v(5): object "t1" differs only in case from object "T1" in the same scope
